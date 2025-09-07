@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "StockService";
+
+package stock;
+
+service Stock {
+  rpc GetStock (GetStockRequest) returns (GetStockReply);
+}
+
+message GetStockRequest {
+  string product_id = 1;
+}
+
+message GetStockReply {
+  int32 quantity_on_hand = 1;
+}
